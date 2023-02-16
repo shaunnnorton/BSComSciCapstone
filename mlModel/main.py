@@ -11,7 +11,7 @@ df.drop("id",inplace= True, axis=1)
 df.drop("umem",inplace= True, axis=1)
 
 
-X = df.drop("utime",axis=1)
+X = df.drop(["utime","i","p","b","i_size","p_size","b_size"],axis=1)
 Y = df["utime"]
 
 transformer = make_column_transformer((OneHotEncoder(), ["codec", "o_codec"]),remainder="passthrough")
@@ -25,9 +25,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 
 
-model = make_pipeline(StandardScaler(with_mean=False),DecisionTreeRegressor(),verbose=True)
+model = make_pipeline(StandardScaler(with_mean=False),DecisionTreeRegressor(max_leaf_nodes=100),verbose=True)
 model.fit(X_train,y_train)
-
 
 from joblib import dump
 
@@ -35,7 +34,7 @@ dump({"model":model,
       "X_train":X_train,
       "X_test":X_test, 
       "y_train":y_train, 
-      "y_test":y_test}, "./Models/0003.joblib")
+      "y_test":y_test}, "./Models/0005.joblib")
 
 
 print(model.score(X_test,y_test))

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Capstone</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon">
+</head>
+<body>
+    <nav id="top-nav">
+        <a href="{{url_for('main.mainRoute')}}">Home</a>
+        <a href="{{url_for('main.modelRoute')}}">Model Information</a>
+        <h1 id="site-title">Computer Science Capstone</h1>
+    </nav>
+    <main>
+        {% for message in get_flashed_messages() %}
+        <p class='flash_message'>{{ message }}
+
+            <a href="/">Close</a>
+        </p>
+        {% endfor %}
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

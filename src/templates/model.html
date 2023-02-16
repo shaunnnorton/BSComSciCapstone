@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Decision Tree Regression</h1>
+The algorithm used for the prediciton of the transcoding times for this project was decison tree regression.
+The algorithm was trained on a dataset of roughly 16000 entries 
+collected from the University of California Irvine Machinie Learning Repository. The model has an r^2 score of 0.9813526253175591. 
+Below are some figures depicting elements of the mode
+
+<div>
+    <h2>Prediction Error</h2>
+    <img src="{{url_for('static', filename='0004DecisionTreePredictionErrorDisplay.png')}}" >
+</div>
+<div>
+    <h2>Partial Dependencies</h2>
+    <img src="{{url_for('static', filename='0004DecisionTreePartialDependencies.png')}}" >
+</div>
+<div>
+    <h2>Fist 3 Levels of Tree Model</h2>
+    <img src="{{url_for('static', filename='TreeModelFirst3.png')}}" >
+</div>
+<div>
+    <h2>Tree Model</h2>
+    <img src="{{url_for('static', filename='TreeModel.png')}}" >
+</div>
+
+
+
+{% endblock %}

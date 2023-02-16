@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="prediction-form">
+    <h1>prediction-form</h1>
+    <form action="{{url_for('main.predictRoute')}}">
+        <div class="video-properties">
+            <label for="duration-input">Video Duration</label>
+            <input type="number" name="duration" id="duration-input">
+            <label for="codec">Video Codec</label>
+            
+            <div class="radios">
+            <input type="radio" name="codec" id="codec-input-flv" value="flv">
+            <label for="codec-input-flv">FLV</label>
+            <input type="radio" name="codec" id="codec-input-h264" value="h264">
+            <label for="codec-input-h264">h264</label>
+            <input type="radio" name="codec" id="codec-input-mpeg4" value="mpeg4">
+            <label for="codec-input-mpeg4">MPEG4</label>
+            <input type="radio" name="codec" id="codec-input-vp8" value="vp8">
+            <label for="codec-input-vp8">VP8</label>
+            </div>
+
+            <label for="video-width-input">Video Width</label>
+            <input type="number" name="video-width" id="video-width-input">
+            <label for="video-height-input">Video Height</label>
+            <input type="number" name="video-height" id="video-height-input">
+            <label for="video-bitrate-input">Video Bitrate</label>
+            <input type="number" name="video-bitrate" id="video-bitrate-input">
+            <label for="video-framerate-input">Video Framerate</label>
+            <input type="number" name="video-framerate" id="video-framerate-input">
+            <label for="video-size-input">Video Size</label>
+            <input type="number" name="video-size" id="video-size-input">
+
+        </div>
+        <br>
+        <br>
+        <div class="transcode-properties">
+            <label for="output-codec">Output Video Codec</label>
+            
+            <div class="radios">
+            <input type="radio" name="output-codec" id="output-codec-input-flv" value="flv">
+            <label for="output-codec-input-flv">FLV</label>
+            <input type="radio" name="output-codec" id="output-codec-input-h264" value="h264">
+            <label for="output-codec-input-h264">h264</label>
+            <input type="radio" name="output-codec" id="output-codec-input-mpeg4" value="mpeg4">
+            <label for="output-codec-input-mpeg4">MPEG4</label>
+            <input type="radio" name="output-codec" id="output-codec-input-vp8" value="vp8">
+            <label for="output-codec-input-vp8">VP8</label>
+            </div>
+
+            <label for="output-video-width-input">Output Video Width</label>
+            <input type="number" name="output-video-width" id="output-video-width-input">
+            <label for="output-video-height-input">Output Video Height</label>
+            <input type="number" name="output-video-height" id="output-video-height-input">
+            <label for="output-video-bitrate-input">Output Video Bitrate</label>
+            <input type="number" name="output-video-bitrate" id="output-video-bitrate-input">
+            <label for="output-video-framerate-input">Output Video Framerate</label>
+            <input type="number" name="output-video-framerate" id="output-video-framerate-input">
+
+
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

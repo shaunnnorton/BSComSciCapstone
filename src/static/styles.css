@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 150px;
+}
+
+nav {
+    background-color: rgb(0, 19, 194);
+    color: antiquewhite;
+    padding: 1em;
+    position:absolute;
+    width: 100vw;
+    left: 0px;;
+    top: 0;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    margin: 1em;
+    background-color: black;
+    padding: 0.5em;
+    border-radius: 20%;
+}
+
+.video-properties, .transcode-properties {
+    display: flex;
+    flex-direction: column;
+}
+
+.radios {
+    border: 0;
+}
+
+.flash_message {
+    position: absolute;
+    margin: auto;
+    background-color: black;
+    padding: 10em;
+    color: gold;
+    border-radius: 10em;
+
+}
+
+img {
+    max-width: 80vw;
+}
