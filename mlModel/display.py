@@ -14,10 +14,10 @@ print(X_test.columns.values)
 print(model.score(X_test,y_test))
 
 print(model.named_steps)
-fig = pyplot.figure(figsize=(120,100),dpi=300)
-plot_tree(model['decisiontreeregressor'])
+fig = pyplot.figure(figsize=(4,4),dpi=1000)
+plot_tree(model['decisiontreeregressor'],max_depth=3,filled=True,rounded=True,feature_names=X_test.columns)
 
-pyplot.savefig("./Figures/test0004.png")
+pyplot.savefig("./Figures/test0005.png")
 
 
 
